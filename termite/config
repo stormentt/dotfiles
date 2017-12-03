@@ -1,0 +1,26 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = Inconsolata, FontAwesome 12
+scrollback_lines = 10000
+search_wrap = true
+loginShell=true
+
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+filter_unmatched_urls = true
+
+[colors]
+foreground = rgba(255,255,255,0.7)
+foreground_bold = rgba(255,255,255,1)
+background = rgba(0,0,0,0.8)

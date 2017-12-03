@@ -1,0 +1,3 @@
+directory: ~/Music
+library: ~/Music/musiclibrary.blb
+plugins: fetchart lyrics lastgenre embedart web duplicates badfiles

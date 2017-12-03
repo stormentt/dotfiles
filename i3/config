@@ -1,0 +1,190 @@
+# Meta key / Windows Key
+set $mod Mod4
+
+# Window title & default font
+ font xft:Roboto 11
+
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec termite
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# Rofi SSH
+bindsym $mod+Shift+d exec rofi -show ssh -font "Roboto 12" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
+
+# Normal Rofi
+bindsym $mod+d exec rofi -show run -font "Roboto 12" -location 0 -sidebar-mode -modi "ssh" -lines 10 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
+
+# Gaps
+gaps inner 10
+
+# Network Management
+exec nm-applet &
+
+# Dunst
+exec --no-startup-id dunst
+
+# Wallpaper
+exec ~/scripts/wallpapers/choose.sh
+
+# Borders are ugly
+new_window none
+new_float normal 0
+
+#Compositing
+exec compton -b
+
+# MPD
+exec mpd
+
+# Keybindings
+## Change wallpaper
+bindsym $mod+Shift+w exec ~/scripts/wallpapers/choose.sh
+
+## Open browser
+bindsym $mod+o exec firefox
+
+## Screenshot (clipping)
+bindsym --release $mod+c exec bash ~/scripts/scrots/rectScrot.sh
+## Screenshot (full screen)
+bindsym $mod+Shift+c exec bash ~/scripts/scrots/fullScrot.sh
+
+## Suspend
+bindsym $mod+Shift+s exec systemctl suspend -i
+
+## Blurry lockscreen
+bindsym $mod+b exec ~/scripts/lock/blurlock.sh
+bindsym $mod+Shift+b exec ~/scripts/lock/blurlock.sh && systemctl suspend -i 
+
+## Pixellated lock screen
+bindsym $mod+p exec ~/scripts/lock/pixellock.sh
+bindsym $mod+Shift+p exec ~/scripts/lock/pixellock.sh && systemctl suspend -i
+
+## Backlight controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+## MPC Controls
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+
+## Sound Level controls
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
+bindsym XF86AudioMute exec amixer sset Master toggle
+
+# Window Colors
+# class                     border  backgr  text    indicator   child_border
+client.focused              #2196f3 #2196f3 #ffffff #ffffff     #2196f3
+client.focused_inactive     #2196f3 #2196f3 #ffffff #ffffff     #2196f3
+client.unfocused            #616161 #616161 #ffffff #ffffff     #616161
+client.urgent               #f44336 #f44336 #ffffff #ffffff     #f44336
+client.placeholder          #000000 #616161 #ffffff #000000     #616161
+client.background                   #616161
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Horizontal splitting
+bindsym Control+Shift+h split h
+
+# Vertical splitting
+bindsym Control+Shift+v split v
+
+# Fullscreen mode
+bindsym $mod+f fullscreen toggle
+
+# Container Layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Tiling/Floating
+bindsym $mod+Shift+space floating toggle
+
+# Tiling/Floating focus
+bindsym $mod+space focus mode_toggle
+
+# Focus parent container
+bindsym $mod+a focus parent
+
+# Switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Restart i3
+bindsym $mod+Shift+r restart
+
+# Exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Resizing
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # Exit resize mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# i3bar
+bar {
+    colors {
+        background #1565c0
+        statusline #ffffff
+        inactive_workspace #757575 #616161 #ffffff
+        focused_workspace  #757575 #eeeeee #000000
+        urgent_workspace   #757575 #f44336 #ffffff
+    }
+    tray_padding 0
+    # i3blocks is superior
+    status_command SCRIPT_DIR=~/dotfiles/i3/i3blocks-contrib/ i3blocks
+
+    separator_symbol " "
+    position top
+    font pango:Inconsolata Medium, FontAwesome 12
+    strip_workspace_numbers yes
+}

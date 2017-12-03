@@ -1,0 +1,12 @@
+[user]
+	email = tanner@secrecy.email
+	name = Tanner Storment
+	signingkey = 4291F07B0C903F170F0373A86C7EF80BC4A6AD93
+[push]
+	default = simple
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
