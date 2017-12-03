@@ -7,6 +7,7 @@ export LANG="en_US.UTF-8"
 # ZSH Configuration
 CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
+HISTFILE="/dev/null"
 
 plugins=(git zsh-syntax-highlighting)
 
