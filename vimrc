@@ -11,11 +11,8 @@ syntax on
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'posva/vim-vue'
 Plugin 'alvan/vim-closetag'
 Plugin 'scrooloose/nerdtree'
-Plugin 'peterhoeg/vim-qml'
-Plugin 'Townk/vim-autoclose'
 Plugin 'xolox/vim-misc'
 Plugin 'fatih/vim-go'
 Plugin 'lunaru/vim-twig'
@@ -65,10 +62,6 @@ au BufRead /tmp/mutt-* set tw=72
 "===== Closetag =====
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.vue,*.php"
 "=====/Closetag =====
-
-"===== Vue =====
-autocmd FileType vue syntax sync fromstart
-"=====/Vue =====
 
 "===== Go =====
 let g:go_fmt_command = "goimports"
