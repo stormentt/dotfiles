@@ -1,23 +1,25 @@
 !Black
-*color0: #333333
+!color0: #333333
 !DarkGrey
-*color7: #eeeeee
+!color7: #eeeeee
 !Grey
-*color8: #bbbbbb
+!color8: #bbbbbb
 !DarkBlue
-*color4: #2e6ffd
+!color4: #2e6ffd
 !Blue
-*color12: #2e6ffd
+!*color12: #2e6ffd
 !Yellow
-*color11: #eeeeee
+!*color11: #eeeeee
 !DarkYellow
-*color3: #6fffff
+!*color3: #6fffff
 
 rofi.color-enabled: true
-rofi.color-window: #273238, #273238, #1e2529
-rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+rofi.color-window: #1a1a1a, #b872ea, #fff
+rofi.color-normal: #1a1a1a, #efefef, #1a1a1a, #393939, #ffffff
 rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
 rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    termite -e "{ssh-client} {host}"
 rofi.run-shell-command: termite -e "{cmd} && read"
+rofi.sidebar-mode: true
+rofi.bw: 2
