@@ -21,6 +21,47 @@ cursor_shape = block
 filter_unmatched_urls = true
 
 [colors]
-foreground = rgba(255,255,255,0.7)
-foreground_bold = rgba(255,255,255,1)
-background = rgba(0,0,0,0.8)
+foreground = #fefefe
+foreground_bold = #ffffff
+background = #393939
+
+# Black
+color0 = #1a1a1a
+
+# Gray
+color8 = #a5a5a5
+
+# Silver
+color7 = #c4c4c4
+
+# White
+color15 = #fcfcfc
+
+# Red
+color1 = #e54b4b
+color9 = #e54b4b
+
+# Pink
+color224 = #f1b7c4
+
+# Green
+color2   = #88fc82
+color10  = #88fc82
+color121 = #88fc82
+
+# Yellow
+color3  = #e8ff7f
+color11 = #e8ff7f
+
+# Blue
+color4  = #677fea
+color12 = #677fea
+
+# Purple
+color5  = #b872ea
+color13 = #b872ea
+
+# Teal
+color6  = #5ff4ef
+color14 = #5ff4ef
+color81 = #5ff4ef
