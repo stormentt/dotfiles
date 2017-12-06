@@ -17,7 +17,7 @@ type = internal/date
 interval = 1.0
 date = %Y-%m-%d
 time = %I:%M:%S
-label = %{F#5ff4ef}%date% %{F-}%time%
+label = %{F#5ff4ef}%date% %{F-} %time%
 label-font = 1
 
 [module/arch-updates]
@@ -25,6 +25,56 @@ type = custom/script
 interval = 600
 label = "%output:2:30%"
 exec = ~/.config/polybar/arch-updates.sh
+
+[module/volume]
+type = internal/volume
+
+master-soundcard = default
+headphone-soundcard = default
+
+master-mixer = Master
+headphone-mixer = Headphone
+headphone-id = 17
+
+mapped = true
+
+format-volume = <label-volume>
+label-volume = %percentage%%
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+
+interval = 2
+
+format-online = %{u#b872ea} <icon-prev> %{u#88fc82} <toggle> <label-song> %{u#b872ea} <icon-next> %{u-}
+format-playing = %{u#b872ea} <icon-prev> %{u#88fc82} <toggle> <label-song> %{u#b872ea} <icon-next> %{u-}
+format-paused = %{u#b872ea} <icon-prev> %{u#e8ff7f} <toggle> <label-song> %{u#b872ea} <icon-next> %{u-}
+format-stopped = 
+
+label-song-font = 5
+label-song = %artist% - %title%
+icon-play = 
+icon-pause = 
+;label-song = %artist% - %title%
+;icon-play = 
+;icon-pause = 
+;icon-stop = 
+icon-prev = 
+icon-next = 
+;icon-seekb = 
+;icon-seekf = 
+;icon-consume = ✀
+
+label-song-click-left = mpc pause
+
+[module/mail]
+type = custom/script
+interval = 30
+format = <label>
+exec = ~/.config/polybar/mail
+format-padding = 2
 
 [module/wireless]
 type = internal/network
@@ -98,8 +148,10 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 time-format = %H:%M
+full-at = 99
 
-format-charging = <animation-charging>
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %time%
@@ -166,16 +218,24 @@ label-mounted-underline = ${colors.purple}
 type = internal/i3
 strip-wsnumbers = true
 
-label-focused = %name%
+ws-icon-0 = "1:General;"
+ws-icon-1 = "2:Browser;"
+ws-icon-2 = "3:Programming;"
+ws-icon-3 = "4:Music;"
+ws-icon-4 = "5:Mail;"
+ws-icon-5 = "6:Chat;"
+ws-icon-6 = "7:Art;"
+
+label-focused = %icon%  %name%
 label-focused-background = ${colors.white}
 label-focused-foreground = ${colors.black}
-label-focused-underline = ${colors.green}
+label-focused-underline = ${colors.blue}
 label-focused-padding = 2
 
-label-unfocused = %name%
+label-unfocused = %icon%  %name%
 label-unfocused-padding = 2
 
-label-urgent = %name%
+label-urgent = %icon%  %name%
 label-urgent-padding = 2
 label-urgent-underline = ${colors.red}
 
@@ -185,15 +245,16 @@ bottom = false
 background = ${colors.black}
 foreground = ${colors.white}
 padding = 2
-module-margin = 2
-modules-right = date
+module-margin = 1
+modules-right = mail date
 modules-center = wireless
 modules-left = i3
 tray-position = right
-font-0 = Roboto:size=11;3
+font-0 = Roboto:size=12;3
 font-1 = FontAwesome:size=10;3
 font-2 = FontAwesome:size=12;4
 font-3 = MaterialIcons:size=16;8
+font-4 = FontAwesome:size=16;8
 underline-size = 2
 
 [bar/bottom]
@@ -201,12 +262,13 @@ bottom= true
 background = ${colors.black}
 foreground = ${colors.white}
 padding = 2
-module-margin = 2
-font-0 = Roboto:size=11;3
-font-1 = FontAwesome:size=10;3
+module-margin = 1
+font-0 = Roboto Mono:style=Light:size=12;3
+font-1 = FontAwesome:size=10;2
 font-2 = FontAwesome:size=12;4
 font-3 = MaterialIcons:size=16;8
+font-4 = Inconsolata:size=11;2
 underline-size = 2
 modules-right = fs-root fs-home arch-updates
 modules-left = cpu memory battery-one battery-two
-modules-center = weathericons
+modules-center = mpd
