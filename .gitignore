@@ -1,1 +1,4 @@
 oh-my-zsh
+polybar/mail
+polybar/weathericons
+mutt/*.conf
