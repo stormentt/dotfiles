@@ -19,7 +19,7 @@ rofi.color-normal: #1a1a1a, #efefef, #1a1a1a, #393939, #ffffff
 rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
 rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 rofi.ssh-client:                     ssh
-rofi.ssh-command:                    termite -e "{ssh-client} {host}"
+rofi.ssh-command:                    termite -e "zsh -c 'TERM=xterm-256color {ssh-client} {host}'"
 rofi.run-shell-command: termite -e "{cmd} && read"
 rofi.sidebar-mode: true
 rofi.bw: 2

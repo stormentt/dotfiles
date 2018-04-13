@@ -7,7 +7,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec termite -e /bin/zsh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -28,7 +28,8 @@ exec nm-applet &
 exec --no-startup-id dunst
 
 # Wallpaper
-exec ~/scripts/wallpapers/choose.sh
+#exec ~/scripts/wallpapers/choose.sh
+exec feh --bg-scale ~/wallpapers/rainbow.png
 
 # Borders are ugly
 new_window none
@@ -53,7 +54,7 @@ bindsym --release $mod+c exec bash ~/scripts/scrots/rectScrot.sh
 bindsym $mod+Shift+c exec bash ~/scripts/scrots/fullScrot.sh
 
 ## Suspend
-bindsym $mod+Shift+s exec systemctl suspend -i
+#bindsym $mod+Shift+s exec systemctl suspend -i
 
 ## Blurry lockscreen
 bindsym $mod+b exec ~/scripts/lock/blurlock.sh
@@ -121,8 +122,8 @@ bindsym $mod+space focus mode_toggle
 # Focus parent container
 bindsym $mod+a focus parent
 
-set $ws1 "1:General"
-set $ws2 "2:Browser"
+set $ws1 "1:Browser"
+set $ws2 "2:General"
 set $ws3 "3:Programming"
 set $ws4 "4:Music"
 set $ws5 "5:Mail"
