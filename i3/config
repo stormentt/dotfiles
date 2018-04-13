@@ -20,6 +20,7 @@ bindsym $mod+d exec rofi -show run -font "Roboto 12" -location 0 -sidebar-mode -
 
 # Gaps
 gaps inner 10
+gaps outer 5
 
 # Network Management
 exec nm-applet &
@@ -31,8 +32,8 @@ exec --no-startup-id dunst
 exec ~/scripts/wallpapers/choose.sh
 
 # Borders are ugly
-new_window none
-new_float normal 0
+new_window pixel 3
+new_float pixel 3
 
 #Compositing
 exec compton -b
@@ -49,8 +50,10 @@ bindsym $mod+o exec firefox
 
 ## Screenshot (clipping)
 bindsym --release $mod+c exec bash ~/scripts/scrots/rectScrot.sh
+bindsym --release Print exec bash ~/scripts/scrots/rectScrot.sh
 ## Screenshot (full screen)
 bindsym $mod+Shift+c exec bash ~/scripts/scrots/fullScrot.sh
+bindsym $mod+Print exec bash ~/scripts/scrots/fullScrot.sh
 
 ## Suspend
 bindsym $mod+Shift+s exec systemctl suspend -i
@@ -79,8 +82,8 @@ bindsym XF86AudioMute exec amixer sset Master toggle
 
 # Window Colors
 # class                     border  backgr  text    indicator   child_border
-client.focused              #2196f3 #2196f3 #ffffff #ffffff     #2196f3
-client.focused_inactive     #2196f3 #2196f3 #ffffff #ffffff     #2196f3
+client.focused              #677fea #677fea #ffffff #a5a5a5     #677fea
+client.focused_inactive     #616161 #616161 #ffffff #ffffff     #616161
 client.unfocused            #616161 #616161 #ffffff #ffffff     #616161
 client.urgent               #f44336 #f44336 #ffffff #ffffff     #f44336
 client.placeholder          #000000 #616161 #ffffff #000000     #616161
@@ -130,7 +133,7 @@ set $ws6 "6:Chat"
 set $ws7 "7:Art"
 set $ws8 "8:SSH"
 set $ws9 "9:General"
-set $ws10 "10:General"
+set $ws10 "10:Servers"
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
