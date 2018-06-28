@@ -70,17 +70,17 @@ bindsym Shift+Print exec bash ~/scripts/scrots/fullScrot.sh
 bindsym XF86Calculator exec termite -e "bc -l"
 
 ## Blurry lockscreen
-bindsym $mod+b exec ~/scripts/lock/blurlock.sh
-bindsym $mod+Shift+b exec ~/scripts/lock/blurlock.sh && systemctl suspend -i 
+bindsym $mod+b exec ~/scripts/lock/lock.sh blur
+bindsym $mod+Shift+b exec ~/scripts/lock/lock.sh blur && systemctl suspend -i 
 
 ## Pixellated lock screen
-bindsym $mod+p exec ~/scripts/lock/pixellock.sh
-bindsym $mod+Shift+p exec ~/scripts/lock/pixellock.sh && systemctl suspend -i
-bindsym XF86Favorites exec ~/scripts/lock/pixellock.sh
+bindsym $mod+p exec ~/scripts/lock/lock.sh pixel
+bindsym $mod+Shift+p exec ~/scripts/lock/lock.sh pixel && systemctl suspend -i
+bindsym XF86Favorites exec ~/scripts/lock/lock.sh pixel
 
 ## Waved lock screen
-bindsym $mod+w exec ~/scripts/lock/wavelock.sh
-bindsym $mod+Shift+w exec ~/scripts/lock/wavelock.sh && systemctl suspend -i
+bindsym $mod+w exec ~/scripts/lock/lock.sh wave
+bindsym $mod+Shift+w exec ~/scripts/lock/lock.sh wave && systemctl suspend -i
 
 ## Backlight controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
