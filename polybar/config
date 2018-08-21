@@ -158,13 +158,16 @@ label-mounted-underline = ${colors.purple}
 type = internal/i3
 strip-wsnumbers = true
 
-ws-icon-0 = "2:General;"
-ws-icon-1 = "1:Browser;"
-ws-icon-2 = "3:Programming;"
+ws-icon-0 = "1:Browser;"
+ws-icon-1 = "2:Smartwarn;"
+ws-icon-2 = "3:VirtualBox;"
 ws-icon-3 = "4:Music;"
-ws-icon-4 = "5:Mail;"
-ws-icon-5 = "6:Chat;"
-ws-icon-6 = "7:Art;"
+ws-icon-4 = "5:General Left;"
+ws-icon-5 = "6:General Right;"
+ws-icon-6 = "7:Programming;"
+ws-icon-7 = "8:SSH;"
+ws-icon-8 = "9:Logs;"
+ws-icon-9 = "10:Monitoring;"
 
 label-mode-padding = 2
 label-visible-padding = 2

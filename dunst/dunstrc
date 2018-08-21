@@ -26,13 +26,13 @@
     background = "#4a4a4a"
     foreground = "#fcfcfc"
     #frame_color = "#fcd467"
-    timeout = 10
+    timeout = 0
 
 [urgency_normal]
     background = "#4a4a4a"
     foreground = "#fcfcfc"
     frame_color = "#677fea"
-    timeout = 20
+    timeout = 0
 
 [urgency_critical]
     background = "#4a4a4a"

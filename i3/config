@@ -141,15 +141,15 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 set $ws1 "1:Browser"
-set $ws2 "2:General"
-set $ws3 "3:Programming"
+set $ws2 "2:Smartwarn"
+set $ws3 "3:VirtualBox"
 set $ws4 "4:Music"
-set $ws5 "5:Mail"
-set $ws6 "6:Chat"
-set $ws7 "7:Art"
+set $ws5 "5:General Left"
+set $ws6 "6:General Right"
+set $ws7 "7:Programming"
 set $ws8 "8:SSH"
-set $ws9 "9:General"
-set $ws10 "10:Servers"
+set $ws9 "9:Logs"
+set $ws10 "10:Monitoring"
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -174,6 +174,20 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
+set $left DP-4
+set $right DP-5
+workspace $ws1 output $left
+workspace $ws2 output $left
+workspace $ws3 output $left
+workspace $ws4 output $left
+workspace $ws5 output $left
+
+workspace $ws6 output $right
+workspace $ws7 output $right
+workspace $ws8 output $right
+workspace $ws9 output $right
+workspace $ws10 output $right
 
 # Restart i3
 bindsym $mod+Shift+r restart
