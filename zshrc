@@ -31,8 +31,6 @@ umask 077
 # Aliases
 alias cls="clear && ls"
 
-alias fixssh='cp /n/ictfilesrv.u001/home/tstorment/.ssh/id_rsa-cert.pub ~/.ssh'
-
 alias a=ansible
 alias ap=ansible-playbook
 alias av=ansible-vault

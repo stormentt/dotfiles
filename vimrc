@@ -7,6 +7,8 @@ set backupdir=$HOME/.vim/backups/
 set backup
 set writebackup
 
+set cm=blowfish2
+
 filetype off
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
