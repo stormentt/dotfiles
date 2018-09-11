@@ -77,3 +77,5 @@ function atno
 
   echo "notify-send -u critical \"$SUMMARY\" \"$BODY\"" | at $TIME
 }
+
+alias editcp="xclip -out | vipe | xclip"
