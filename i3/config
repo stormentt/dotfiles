@@ -36,7 +36,7 @@ new_window pixel 3
 new_float pixel 3
 
 #Compositing
-exec compton -b
+exec picom -b
 
 # MPD
 exec mpd

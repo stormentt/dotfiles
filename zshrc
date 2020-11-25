@@ -9,7 +9,7 @@ CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
 HISTFILE="/dev/null"
 
-plugins=(git zsh-syntax-highlighting)
+plugins=(git)
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
