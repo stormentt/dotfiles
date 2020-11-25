@@ -1,0 +1,60 @@
+function record {
+  if [ ! -z $CTMPDIR ]; then
+    echo "can't use record in a ctmp"
+    return 1
+  fi
+
+  umask 077
+
+  local TODAY="$(date "+%Y.%m.%d")"
+  local TIME="$(date "+%H.%M.%S")"
+
+  local SCRIPTS_DIR="${HOME}/.scripts"
+  local SCRIPT_DIR="${SCRIPTS_DIR}/${TODAY}-${TIME}"
+  local ARCHIVE_DIR="${SCRIPTS_DIR}/archives"
+
+  mkdir -p $SCRIPT_DIR
+  mkdir -p $ARCHIVE_DIR
+
+  export SCRIPT_FILE="$SCRIPT_DIR/script"
+  export SCRIPT_TIMES="$SCRIPT_DIR/times"
+  script --quiet --command=/bin/zsh --timing="$SCRIPT_TIMES" "$SCRIPT_FILE"
+
+  cat <<eos > $SCRIPT_DIR/watch.sh
+#!/bin/zsh
+scriptreplay --maxdelay 5 --timing times script
+echo "script finished"
+eos
+  chmod +x ${SCRIPT_DIR}/watch.sh
+  tar -cJf "${ARCHIVE_DIR}/${TODAY}-${TIME}.tar.xz" -C "${SCRIPTS_DIR}" "${TODAY}-${TIME}"
+  rm -rf $SCRIPT_DIR
+
+  unset SCRIPT_FILE
+  unset SCRIPT_TIMES
+}
+
+function replay {
+  local file="$1"
+
+  if [ ! -f "$file" ]; then
+    echo "can't replay a nonexistent package"
+    return 1
+  fi
+
+  local tmp="$(mktemp -d /dev/shm/replay.XXX)"
+  if [ $? -ne 0 ]; then
+    echo "can't create temp dir"
+    return 1
+  fi
+
+  tar -C "$tmp" -xJf "$file"
+  if [ $? -ne 0 ]; then
+    echo "can't extract $file to $tmp"
+    return 1
+  fi
+
+  local pwd="$(pwd)"
+  trap "{ cd '$pwd' && rm -r '$tmp'}" SIGINT SIGTERM EXIT
+  cd "$tmp/${$(basename "$file")%.tar.xz}"
+  ./watch.sh
+}

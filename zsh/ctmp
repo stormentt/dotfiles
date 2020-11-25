@@ -1,0 +1,21 @@
+function ctmp {
+  if [ ! -z "$CTMPDIR" ]; then
+    echo -e "${RED}Cannot ctmp(): we're already in a ctmp!${NC}"
+    return
+  fi
+
+  OLDDIR=$(pwd)
+  TMPDIR=$(mktemp -d /dev/shm/ctmp.XXX)
+
+  chmod 0700 $TMPDIR
+  cd $TMPDIR
+
+  ln -s $HOME/.vimrc $TMPDIR
+  ln -s $HOME/.vim $TMPDIR
+  ln -s $HOME/.gnupg $TMPDIR
+
+  CTMPDIR=$TMPDIR zsh
+  cd $OLDDIR
+
+  rm -rf $TMPDIR
+}

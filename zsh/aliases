@@ -1,0 +1,62 @@
+# Aliases
+alias cls="clear && ls"
+alias :q="exit"
+
+alias dc=docker-compose
+
+alias gpg2=gpg
+
+alias a=ansible
+alias ap=ansible-playbook
+alias av=ansible-vault
+alias ac=ansible-console
+
+alias resource='source ~/.zshrc'
+
+alias alert='notify-send --urgency=low "Execution Complete" "Your command has finished executing."; tput bel'
+
+alias pbs="cd ~/infra/ansible/playbooks"
+
+alias pro="cd ~/projects"
+
+alias uuid=uuidgen
+
+alias sc=socat
+
+# i mistype a lot
+alias sl=ls
+alias chmdo=chmod
+alias scd=cd
+alias scat=cat
+
+alias ,="cd ../"
+alias ,,="cd ../../"
+alias ,,,="cd ../../../"
+alias ,,,,="cd ../../../../"
+alias ,,,,,="cd ../../../../../"
+
+alias v=vim
+
+alias ll="ls -lah"
+
+alias ag=rg
+
+alias nmake="make -j$(nproc)"
+
+alias vgrep="egrep -v"
+
+alias keys="cat <(echo 'BITS FINGERPRINT PATH TYPE') <(echo '---- ----------- ---- ----') <(ssh-add -l) | column -t"
+
+alias please="sudo !!"
+
+SSH_TARGETS=(
+  fermium
+)
+
+for target in "${SSH_TARGETS[@]}"; do
+  alias $target="ssh admin@$target"
+done
+
+alias editcp="xclip -out | vipe | xclip"
+
+alias shm="cd /dev/shm"

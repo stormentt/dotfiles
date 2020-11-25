@@ -2,6 +2,14 @@ set nocompatible
 set background=dark
 set showcmd
 
+set directory=$HOME/.vim/swap/
+set backupdir=$HOME/.vim/backups/
+set backup
+set writebackup
+
+set cm=blowfish2
+set tabpagemax=500
+
 filetype off
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
@@ -15,7 +23,6 @@ Plugin 'alvan/vim-closetag'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
 Plugin 'fatih/vim-go'
-Plugin 'lunaru/vim-twig'
 Plugin 'diepm/vim-rest-console'
 
 call vundle#end()
@@ -27,8 +34,8 @@ set t_Co=256
 
 "===== Tabs =====
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set autoindent
 "=====/Tabs =====
 
@@ -66,3 +73,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.vue,*.php"
 "===== Go =====
 let g:go_fmt_command = "goimports"
 "=====/Go =====
+
+"===== Misc =====
+nnoremap <C-C> mc :%!column -t<CR> `c
+"===== Misc =====

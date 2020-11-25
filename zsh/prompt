@@ -1,0 +1,21 @@
+setopt prompt_subst
+
+export PROMPT="%n@%m:%~%# "
+
+if [ ! -z $CTMPDIR ]; then
+  GREEN=$'\e[0;32m'
+  BLUE=$'\e[0;34m'
+  NC=$'\e[0m'
+  export PROMPT="%{${GREEN}%}(%{${BLUE}%}$(basename $CTMPDIR)%{${GREEN}%})%{${NC}%} %n@%m:\$(pwd | sed "s=$CTMPDIR=~=g")%# "
+
+  HISTFILE="$CTMPDIR/.zsh_history"
+  HOME="$CTMPDIR"
+fi
+
+if [ ! -z $SCRIPT_FILE ]; then
+  RED=$'\e[0;31m'
+  NC=$'\e[0m'
+  export PROMPT="%{${RED}%}(recording)%{${NC}%} %n@%m:%~%# "
+
+  echo "recording to $SCRIPT_FILE"
+fi

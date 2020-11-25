@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Window title & default font
- font xft:Roboto 11
+font xft:Roboto 11
 
 floating_modifier $mod
 
@@ -59,12 +59,12 @@ bindsym $mod+Print exec bash ~/scripts/scrots/fullScrot.sh
 bindsym $mod+Shift+s exec systemctl suspend -i
 
 ## Blurry lockscreen
-bindsym $mod+b exec ~/scripts/lock/blurlock.sh
-bindsym $mod+Shift+b exec ~/scripts/lock/blurlock.sh && systemctl suspend -i 
+bindsym $mod+b exec ~/scripts/lock/lock.sh blur
+bindsym $mod+Shift+b exec ~/scripts/lock/lock.sh blur && systemctl suspend -i 
 
 ## Pixellated lock screen
-bindsym $mod+p exec ~/scripts/lock/pixellock.sh
-bindsym $mod+Shift+p exec ~/scripts/lock/pixellock.sh && systemctl suspend -i
+bindsym $mod+p exec ~/scripts/lock/lock.sh pixel
+bindsym $mod+Shift+p exec ~/scripts/lock/lock.sh pixel && systemctl suspend -i
 
 ## Backlight controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -82,8 +82,8 @@ bindsym XF86AudioMute exec amixer sset Master toggle
 
 # Window Colors
 # class                     border  backgr  text    indicator   child_border
-client.focused              #677fea #677fea #ffffff #a5a5a5     #677fea
-client.focused_inactive     #616161 #616161 #ffffff #ffffff     #616161
+client.focused              #677fea #677fea #ffffff #a1a1a1     #677fea
+client.focused_inactive     #616161 #616161 #ffffff #616161     #616161
 client.unfocused            #616161 #616161 #ffffff #ffffff     #616161
 client.urgent               #f44336 #f44336 #ffffff #ffffff     #f44336
 client.placeholder          #000000 #616161 #ffffff #000000     #616161
@@ -112,7 +112,7 @@ bindsym $mod+f fullscreen toggle
 
 # Container Layout
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # Tiling/Floating

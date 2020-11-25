@@ -1,0 +1,112 @@
+function help {
+  local helpfunc="$1"
+  if [[ -z "$helpfunc" ]]; then
+    echo "help what?"
+    return 1
+  fi
+
+  which "_help_$helpfunc" &> /dev/null
+  if [ $? -ne 0 ]; then
+    echo "${RED}help not found for $helpfunc${NC}"
+    return 1
+  fi
+
+  echo -n "${YELLOW}"
+  _help_$helpfunc
+  echo -n "${NC}"
+}
+
+function _help_atno {
+  echo "atno [time] [summary] [body]"
+  echo "  sends a notifcation at the specified time"
+}
+
+function _help_all_oom {
+  echo "all_oom"
+  echo "  shows every process's oom score"
+}
+
+function _help_refreshfresh {
+  echo "resetfresh"
+  echo "  removes ssh host keys for the ictfresh machines from the known_hosts"
+}
+
+function _help_sshdiff {
+  echo "sshdiff [file] [server1] [server2]"
+  echo "  shows the differences between file on server1 and server2"
+}
+
+function _help_mssh {
+  echo "mssh [command] [servers...]"
+  echo "  runs command on the list of servers"
+}
+
+function _help_curlex {
+  echo "curlex [url]"
+  echo "  downloads & extracts the archive at url"
+}
+
+function _help_viclip {
+  echo "viclip"
+  echo "  edit clipboard with vim"
+}
+
+function _help_fclip {
+  echo "fclip [file]"
+  echo "  puts file in clipboard"
+}
+
+function _help_cclip {
+  echo "cclip"
+  echo "  clears clipboards"
+}
+
+function _help_oclip {
+  echo "oclip"
+  echo "  displays clipboards"
+}
+
+function _help_vijson {
+  echo "vijson [file]"
+  echo "  edit json with vim & syntax check"
+}
+
+function _help_cutc {
+  echo "cutc [epoch]"
+  echo "  converts epoch time to local & utc time"
+}
+
+function _help_fepoch {
+  echo "fepoch"
+  echo "  shows epoch times for the next 30 days"
+}
+
+function _help_lepoch {
+  echo "lepoch"
+  echo "  shows epoch times for the last 30 days"
+}
+
+function _help_epoch {
+  echo "epoch"
+  echo "  shows epoch times for the last 30 days and next 30 days"
+}
+
+function _help_ctmp {
+  echo "ctmp"
+  echo "  creates a temp directory in /dev/shm/ and cd's into it"
+}
+
+function _help_record {
+  echo "record"
+  echo "  begin recording a shell session, saved in ~/.scripts"
+}
+
+function _help_help {
+  echo "help [func]"
+  echo "  displays help for func"
+}
+
+function _help_getcron {
+  echo "getcron [server] [users...:weather deploy]"
+  echo "  downloads crontabs for users from server, writes to ./\$user"
+}

@@ -1,0 +1,12 @@
+# deny rwx to group & world
+umask 077
+
+export EDITOR=vim
+export GOPATH=~/go
+export LANG="en_US.UTF-8"
+export XDG_RUNTIME_DIR="/run/user/$UID/"
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+export TERM="xterm-256color"
+
+# Make Java Pretty
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'

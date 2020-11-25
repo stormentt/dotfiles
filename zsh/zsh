@@ -1,0 +1,19 @@
+# ZSH Configuration
+CASE_SENSITIVE="true"
+DISABLE_AUTO_UPDATE="true"
+
+plugins=(git)
+
+export ZSH=${HOME}/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+
+setprompt() {
+	autoload -U colors zsh/terminfo
+	colors
+}
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+unsetopt HIST_VERIFY # makes sudo !! easier

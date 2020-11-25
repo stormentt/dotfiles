@@ -1,0 +1,7 @@
+# key binding
+bindkey -s 'l' "ls -lh\n"
+bindkey -s 's' "sudo !!\n"
+bindkey -s 'e' "editcp\n"
+bindkey -s 'd' "ssh-add -D\n"
+bindkey -s 'c' "clear\n"
+bindkey -s 'k' "keys\n"
