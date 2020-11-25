@@ -20,7 +20,7 @@ bindsym $mod+d exec rofi -show run -font "Roboto 12" -location 0 -sidebar-mode -
 
 # Gaps
 gaps inner 10
-gaps outer 5
+gaps outer 0
 
 # Network Management
 exec nm-applet &
@@ -29,7 +29,8 @@ exec nm-applet &
 exec --no-startup-id dunst
 
 # Wallpaper
-exec ~/scripts/wallpapers/choose.sh
+#exec ~/scripts/wallpapers/choose.sh
+exec feh --bg-scale ~/wallpapers/rainbow.png
 
 # Borders are ugly
 new_window pixel 3
