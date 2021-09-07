@@ -1,3 +1,20 @@
 Protocol 2
 host *
     UseRoaming no
+    IdentityFile /home/xmo/.ssh/id_ed25519
+    IdentityFile /home/xmo/.ssh/op_ed25519
+    Ciphers aes256-ctr,aes256-cbc
+
+host fermium
+  HostName fermium.lab.local
+
+host authority
+  HostName authority.lab.local
+
+host proxmox
+  HostName proxmox.lab.local
+
+host omnicron
+  User tstorment
+  HostName 192.168.1.186
+  ProxyJump xmo@fermium.vpn

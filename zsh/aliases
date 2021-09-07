@@ -15,9 +15,9 @@ alias resource='source ~/.zshrc'
 
 alias alert='notify-send --urgency=low "Execution Complete" "Your command has finished executing."; tput bel'
 
-alias pbs="cd ~/infra/ansible/playbooks"
+alias pbs="cd ~/infra/ansible"
 
-alias pro="cd ~/projects"
+alias pro="cd ~/pro"
 
 alias uuid=uuidgen
 
