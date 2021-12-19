@@ -1,0 +1,5 @@
+configuration {
+  modi: "run,ssh";
+  theme: "custom.rasi";
+  prompt: "";
+}
