@@ -8,13 +8,17 @@ host *
 host fermium
   HostName fermium.lab.local
 
+host lunky
+  HostName lunky.lab.local
+
 host authority
   HostName authority.lab.local
 
 host proxmox
   HostName proxmox.lab.local
 
-host omnicron
-  User tstorment
-  HostName 192.168.1.186
-  ProxyJump xmo@fermium.vpn
+host pihole
+  HostName pihole.lab.local
+
+host terraria
+  HostName terraria.lab.local
