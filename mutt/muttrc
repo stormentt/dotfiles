@@ -8,12 +8,12 @@ unset imap_passive
 set mail_check = 60
 set mbox_type=Maildir
 
-##Personal Account - me@tannerstorment.com
-source ~/.mutt/personal
-folder-hook $folder 'source ~/.mutt/personal'
+##Personal Account - tannerstorment@gmail.com
+source ~/.mutt/gmail
+folder-hook $folder 'source ~/.mutt/gmail'
 
 ##Keybindings
-macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/personal<enter><change-folder>!<enter>'
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/gmail<enter><change-folder>!<enter>'
 bind pager k previous-line #scroll inside the message rather than the index
 bind pager j next-line
 
