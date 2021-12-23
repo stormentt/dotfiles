@@ -22,3 +22,9 @@ host pihole
 
 host terraria
   HostName terraria.lab.local
+
+host mirror
+  HostName mirror.lab.local
+
+host wazuh
+  HostName wazuh.lab.local
