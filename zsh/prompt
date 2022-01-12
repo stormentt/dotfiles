@@ -19,3 +19,10 @@ if [ ! -z $SCRIPT_FILE ]; then
 
   echo "recording to $SCRIPT_FILE"
 fi
+
+if [ ! -z "$YKSSH" ]; then
+  GREEN=$'\e[0;32m'
+  NC=$'\e[0m'
+
+  export PROMPT="%{${GREEN}%}(yk)%{${NC}%} %n@%m:%~%# "
+fi

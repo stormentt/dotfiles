@@ -1,0 +1,8 @@
+function yk {
+  if [ ! -z "$YKSSH" ]; then
+    echo -e "${RED}Cannot yk(): we're already in yk!${NC}"
+    return
+  fi
+
+  YKSSH="true" zsh
+}

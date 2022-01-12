@@ -7,9 +7,9 @@ alias dc=docker-compose
 alias gpg2=gpg
 
 alias a=ansible
-alias ap=ansible-playbook
 alias av=ansible-vault
 alias ac=ansible-console
+alias ap=ansible-playbook
 
 alias resource='source ~/.zshrc'
 
@@ -60,3 +60,9 @@ done
 alias editcp="xclip -out | vipe | xclip"
 
 alias shm="cd /dev/shm"
+
+if [ ! -z "$YKSSH" ]; then
+  alias ssh="ssh -o CertificateFile=~/.ssh/yk_rsa4096-cert.pub"
+  alias ac="ansible-console --ssh-common-args=\"-o CertificateFile=~/.ssh/yk_rsa4096-cert.pub\""
+  alias ap="ansible-playbook --ssh-common-args=\"-o CertificateFile=~/.ssh/yk_rsa4096-cert.pub\""
+fi

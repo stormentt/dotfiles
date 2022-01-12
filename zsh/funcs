@@ -163,6 +163,7 @@ function epoch {
 dotsource ctmp
 dotsource record
 dotsource help
+dotsource yk
 
 function getcron {
   local server="$1"
