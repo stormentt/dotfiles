@@ -2,7 +2,6 @@ Protocol 2
 host *
     UseRoaming no
     IdentityFile /home/xmo/.ssh/id_ed25519
-    IdentityFile /home/xmo/.ssh/op_ed25519
     Ciphers aes256-ctr,aes256-cbc
 
 host fermium
@@ -28,3 +27,12 @@ host mirror
 
 host wazuh
   HostName wazuh.lab.local
+
+host wdesktop
+  HostName wdesktop.lab.local
+
+host music
+  HostName music.lab.local
+
+host pia
+  HostName pia.lab.local

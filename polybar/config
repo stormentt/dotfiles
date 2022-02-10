@@ -118,7 +118,7 @@ interval = 0.5
 format = <label> <ramp-coreload>
 label = 
 label-underline = ${colors.pink}
-format-font = 2
+format-font = 5
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
 ramp-coreload-2 = ▃
@@ -245,10 +245,10 @@ modules-center = wireless
 modules-left = i3
 tray-position = right
 font-0 = Roboto:size=13;3
-font-1 = Font Awesome 5 Free Regular:size=10;3
-font-2 = Font Awesome 5 Free Solid:size=12;4
+font-1 = Font Awesome 6 Free Regular:size=10;3
+font-2 = Font Awesome 6 Free Solid:size=12;4
 font-3 = MaterialIcons:size=16;8
-font-4 = Font Awesome 5 Free Brands:size=16;8
+font-4 = Font Awesome 6 Free Brands:size=16;8
 underline-size = 2
 
 [bar/bottom]
@@ -258,10 +258,11 @@ foreground = ${colors.white}
 padding = 2
 module-margin = 1
 font-0 = Roboto:size=13;3
-font-1 = Font Awesome 5 Free Regular:size=10;3
-font-2 = Font Awesome 5 Free Solid:size=12;4
+font-1 = Font Awesome 6 Free Regular:size=10;3
+font-2 = Font Awesome 6 Free Solid:size=12;4
 font-3 = MaterialIcons:size=16;8
-font-4 = Font Awesome 5 Free Brands:size=12;8
+font-4 = Font Awesome 6 Free Brands:size=12;8
+font-5 = Inconsolata:style=Bold:size=12;4
 underline-size = 2
 modules-right = fs-root fs-home arch-updates
 modules-left = cpu memory battery-one battery-two

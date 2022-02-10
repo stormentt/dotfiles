@@ -12,6 +12,7 @@ export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/usr/sbin"
 
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # dedup
 export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"

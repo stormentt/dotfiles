@@ -81,6 +81,9 @@ bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
 bindsym XF86AudioMute exec amixer sset Master toggle
 
+bindsym Control+space exec dunstctl close
+bindsym Control+Shift+space exec dunstctl close-all
+
 # Window Colors
 # class                     border  backgr  text    indicator   child_border
 client.focused              #677fea #677fea #ffffff #a1a1a1     #677fea
@@ -187,3 +190,5 @@ bindsym $mod+r mode "resize"
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+for_window [instance="^origin.exe$" class="Wine"] floating enable, fullscreen disable

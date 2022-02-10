@@ -17,6 +17,8 @@ macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/gmail<enter>
 bind pager k previous-line #scroll inside the message rather than the index
 bind pager j next-line
 
+set editor="vim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
+
 ##GPG
 set crypt_use_gpgme = yes
 

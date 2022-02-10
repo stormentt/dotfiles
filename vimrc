@@ -10,12 +10,10 @@ set writebackup
 set cm=blowfish2
 set tabpagemax=500
 
-filetype off
 filetype plugin indent off
+filetype off
 set runtimepath+=$GOROOT/misc/vim
 set rtp+=~/.vim/bundle/Vundle.vim
-filetype plugin indent on
-syntax on
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -24,9 +22,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
 Plugin 'fatih/vim-go'
 Plugin 'diepm/vim-rest-console'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 filetype plugin indent on
+syntax on
 
 "Colors
 set t_Co=256
@@ -77,3 +77,5 @@ let g:go_fmt_command = "goimports"
 "===== Misc =====
 nnoremap <C-C> mc :%!column -t<CR> `c
 "===== Misc =====
+"
+let g:terraform_fmt_on_save = 1
