@@ -36,3 +36,7 @@ host music
 
 host pia
   HostName pia.lab.local
+
+host logpi
+  HostName logpi.lab.local
+
