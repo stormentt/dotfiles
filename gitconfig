@@ -1,14 +1,15 @@
 [user]
 	email = tanner@secrecy.email
 	name = Tanner Storment
+	signingkey = 9336509A23F0A05FE0D5C16E2C26BFB4A75B1BC4
 [push]
 	default = simple
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [commit]
-	gpgsign = false
+	gpgsign = true
 [gpg]
-	program = gpg2
+	program = gpg
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
