@@ -1,42 +1,19 @@
 Protocol 2
 host *
     UseRoaming no
-    IdentityFile /home/xmo/.ssh/id_ed25519
     Ciphers aes256-ctr,aes256-cbc
-
-host fermium
-  HostName fermium.lab.local
-
-host lunky
-  HostName lunky.lab.local
-
-host authority
-  HostName authority.lab.local
 
 host proxmox
   HostName proxmox.lab.local
 
+host backups
+  HostName backups.lab.local
+
+host hoster
+  HostName hoster.lab.local
+
+host authority
+  HostName authority.lab.local
+
 host pihole
   HostName pihole.lab.local
-
-host terraria
-  HostName terraria.lab.local
-
-host mirror
-  HostName mirror.lab.local
-
-host wazuh
-  HostName wazuh.lab.local
-
-host wdesktop
-  HostName wdesktop.lab.local
-
-host music
-  HostName music.lab.local
-
-host pia
-  HostName pia.lab.local
-
-host logpi
-  HostName logpi.lab.local
-

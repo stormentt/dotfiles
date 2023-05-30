@@ -1,0 +1,14 @@
+noblacklist /bigtmp/xmo
+whitelist /bigtmp/xmo
+
+noblacklist /bigtmp/xmo/Downloads
+whitelist /bigtmp/xmo/Downloads
+
+noblacklist /bigtmp/xmo/tmp
+whitelist /bigtmp/xmo/tmp
+
+noblacklist ${HOME}/Downloads
+whitelist ${HOME}/Downloads
+
+noblacklist ${HOME}/tmp
+whitelist ${HOME}/tmp

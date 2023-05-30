@@ -187,3 +187,28 @@ function getcron {
     fi
   done
 }
+
+function wine32 {
+  export WINEPREFIX=~/.wine32
+  export WINEARCH=win32
+}
+
+function wine64 {
+  export WINEPREFIX=~/.wine
+  export WINEARCH=win64
+}
+
+function copymusic {
+  DST="$HOME/tmp/copymusic"
+
+
+  for SRC in "$@"; do
+    rsync --recursive --progress "$SRC" $DST
+  done
+}
+
+function jfx {
+LIB_PATH=/usr/lib/jvm/java-11-openjfx/lib
+
+java -jar --module-path=$LIB_PATH/javafx.base.jar:$LIB_PATH/javafx.controls.jar:$LIB_PATH/javafx.fxml.jar:$LIB_PATH/javafx.graphics.jar:$LIB_PATH/javafx.media.jar:$LIB_PATH/javafx.swing.jar:$LIB_PATH/javafx-swt.jar:$LIB_PATH/javafx.web.jar --add-modules javafx.controls,javafx.base,javafx.graphics,javafx.swing,javafx.web,javafx.fxml $1
+}

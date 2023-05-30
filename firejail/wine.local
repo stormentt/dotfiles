@@ -1,0 +1,7 @@
+blacklist ${HOME}/Downloads
+whitelist ${HOME}/.wine
+noblacklist ${HOME}/.wine
+whitelist ${HOME}/.wine32
+
+whitelist ${HOME}/Games
+noblacklist ${HOME}/Games

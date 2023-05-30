@@ -2,7 +2,6 @@ function dotsource {
   source "$HOME/.dotfiles/zsh/$1"
 }
 
-source "$HOME/scripts/lib/colors"
 
 dotsource zsh
 dotsource vars
